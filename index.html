@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog title</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        body, html{
+            padding: 0;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+        .nav{
+            display: flex;
+            color: #fff;
+            background-color: #111;
+            border-bottom: 1px solid #333;
+            padding: 10px 20px;
+            margin-bottom: 50px;
+        }
+        .nav>.brand{
+            flex-basis: 60%;
+            font-size: 40px;
+            flex-grow: 1;
+        }
+        .nav>.buttons{
+            margin-top: 10px;
+        }
+        .nav a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 25px;
+            margin: 0 5px;
+        }
+
+        .body{
+            margin: 0 20px;
+            font-size: 20px;
+        }
+
+        .body>div{
+            margin-bottom: 100px;
+            width: 50%;
+            text-align: justify;
+        }
+
+        .body h3{
+            font-size: 50px;
+        }
+
+        #about{
+            position: relative;
+            left: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav" data-aos="slide-down" data-aos-once="false">
+            <div class="brand">Brand name</div>
+            <div class="buttons">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="body">
+        <div id="home" data-aos="fade-up">
+            <h3>Home</h3>
+            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum maiores dolore odio sint, optio illo excepturi labore commodi laborum, tenetur asperiores est vel iusto, veritatis minima perferendis voluptate ullam velit beatae. Dolorem cumque praesentium exercitationem iste distinctio reprehenderit eaque, veritatis eius esse expedita aperiam, itaque nobis quibusdam porro rem sit cupiditate temporibus ipsa iusto sunt earum maiores ab illo aut. Voluptatibus et ab autem, enim doloremque necessitatibus dicta inventore corporis explicabo. Illum repudiandae sit voluptate iure blanditiis! Inventore quaerat eveniet explicabo beatae neque corrupti? Voluptatum optio voluptates, deserunt illo eius hic id reprehenderit earum! Voluptates doloremque harum corporis qui vel.</div>
+        </div>
+        <div id="about" data-aos="fade-up">
+            <h3>About</h3>
+            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum maiores dolore odio sint, optio illo excepturi labore commodi laborum, tenetur asperiores est vel iusto, veritatis minima perferendis voluptate ullam velit beatae. Dolorem cumque praesentium exercitationem iste distinctio reprehenderit eaque, veritatis eius esse expedita aperiam, itaque nobis quibusdam porro rem sit cupiditate temporibus ipsa iusto sunt earum maiores ab illo aut. Voluptatibus et ab autem, enim doloremque necessitatibus dicta inventore corporis explicabo. Illum repudiandae sit voluptate iure blanditiis! Inventore quaerat eveniet explicabo beatae neque corrupti? Voluptatum optio voluptates, deserunt illo eius hic id reprehenderit earum! Voluptates doloremque harum corporis qui vel.</div>
+        </div>
+        <div id="contact" data-aos="fade-up">
+            <h3>Contact</h3>
+            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum maiores dolore odio sint, optio illo excepturi labore commodi laborum, tenetur asperiores est vel iusto, veritatis minima perferendis voluptate ullam velit beatae. Dolorem cumque praesentium exercitationem iste distinctio reprehenderit eaque, veritatis eius esse expedita aperiam, itaque nobis quibusdam porro rem sit cupiditate temporibus ipsa iusto sunt earum maiores ab illo aut. Voluptatibus et ab autem, enim doloremque necessitatibus dicta inventore corporis explicabo. Illum repudiandae sit voluptate iure blanditiis! Inventore quaerat eveniet explicabo beatae neque corrupti? Voluptatum optio voluptates, deserunt illo eius hic id reprehenderit earum! Voluptates doloremque harum corporis qui vel.</div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          duration: 1000,//in miliseconds
+          once: true
+      });
+    </script>
+</body>
+</html>
