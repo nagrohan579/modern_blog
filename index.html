@@ -10,18 +10,27 @@
         body, html{
             padding: 0;
             margin: 0;
+            margin-top: 50px;
             scroll-behavior: smooth;
+            scroll-padding-top: var(--scroll-padding, 50px);
         }
         .nav{
             display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
             color: #fff;
+            justify-content: space-between;
             background-color: #111;
             border-bottom: 1px solid #333;
             padding: 10px 20px;
             margin-bottom: 50px;
+            transition: all 150ms ease-in-out;
         }
         .nav>.brand{
-            flex-basis: 60%;
+            /* flex-basis: 60%; */
             font-size: 40px;
             flex-grow: 1;
         }
@@ -35,9 +44,14 @@
             margin: 0 5px;
         }
 
+        .nav.sticky{
+            padding: 40px 20px;
+        }
+
         .body{
             margin: 0 20px;
             font-size: 20px;
+            user-select: none;
         }
 
         .body>div{
@@ -58,7 +72,7 @@
 </head>
 <body>
     <header>
-        <div class="nav" data-aos="slide-down" data-aos-once="false">
+        <div class="nav">
             <div class="brand">Brand name</div>
             <div class="buttons">
                 <a href="#home">Home</a>
@@ -89,6 +103,15 @@
           duration: 1000,//in miliseconds
           once: true
       });
+
+      window.addEventListener("scroll", () => {
+          var nav = document.querySelector('.nav');
+          nav.classList.toggle("sticky", window.scrollY > 1)
+          const navHeight = document.querySelector('.nav').offsetHeight;
+        //   console.log(navHeight);
+          document.documentElement.style.setProperty('--scroll-padding', navHeight + 20 + "px");
+      })
+
     </script>
 </body>
 </html>
