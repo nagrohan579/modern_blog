@@ -27,6 +27,7 @@
             border-bottom: 1px solid #333;
             padding: 10px 20px;
             margin-bottom: 50px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
             transition: all 150ms ease-in-out;
         }
         .nav>.brand{
@@ -44,8 +45,8 @@
             margin: 0 5px;
         }
 
-        .nav.sticky{
-            padding: 40px 20px;
+        .nav.hidden{
+            transform: translateY(-70px);
         }
 
         .body{
@@ -83,7 +84,7 @@
     </header>
 
     <div class="body">
-        <div id="home">
+        <div id="home" data-aos="fade-up">
             <h3>Home</h3>
             <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum maiores dolore odio sint, optio illo excepturi labore commodi laborum, tenetur asperiores est vel iusto, veritatis minima perferendis voluptate ullam velit beatae. Dolorem cumque praesentium exercitationem iste distinctio reprehenderit eaque, veritatis eius esse expedita aperiam, itaque nobis quibusdam porro rem sit cupiditate temporibus ipsa iusto sunt earum maiores ab illo aut. Voluptatibus et ab autem, enim doloremque necessitatibus dicta inventore corporis explicabo. Illum repudiandae sit voluptate iure blanditiis! Inventore quaerat eveniet explicabo beatae neque corrupti? Voluptatum optio voluptates, deserunt illo eius hic id reprehenderit earum! Voluptates doloremque harum corporis qui vel.</div>
         </div>
@@ -104,14 +105,30 @@
           once: true
       });
 
-      window.addEventListener("scroll", () => {
-          var nav = document.querySelector('.nav');
-          nav.classList.toggle("sticky", window.scrollY > 1)
-          const navHeight = document.querySelector('.nav').offsetHeight;
-        //   console.log(navHeight);
-          document.documentElement.style.setProperty('--scroll-padding', navHeight + 20 + "px");
-      })
+        //   window.addEventListener("scroll", () => {
+        //       nav.classList.toggle("sticky", window.scrollY > 1)
+        //       const navHeight = document.querySelector('.nav').offsetHeight;
+        //     //   console.log(navHeight);
+        //       document.documentElement.style.setProperty('--scroll-padding', navHeight + 20 + "px");
+        //   })
+        
+        var nav = document.querySelector('.nav');
+        let lastScroll = window.scrollY;
 
+        window.addEventListener("scroll", () => {
+            if(lastScroll > window.scrollY)
+            {    
+                console.log("We goin up!");
+                nav.classList.remove("hidden");
+            }
+            else
+            {
+                console.log("We goin down!");
+                nav.classList.add("hidden");
+            }
+
+            lastScroll = window.scrollY;
+        })
     </script>
 </body>
 </html>
